@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all --parallel backend frontend",
-    "backend": "cd api && nodemon index.js",
+    "backend": "cd api && node index.js",
     "frontend": "cd client && npm start"
   },
   "author": "",

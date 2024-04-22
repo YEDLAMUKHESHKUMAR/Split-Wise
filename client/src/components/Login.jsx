@@ -33,7 +33,7 @@ const Login = () => {
   return (
     <div className="h-screen">
       {user ? (
-        (window.location.href = "/dashboard")
+        (window.location.href = window.location.origin + "/dashboard")
       ) : (
         // <DashBoard />
         <div className="flex justify-center items-center h-full ">

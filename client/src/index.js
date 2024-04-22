@@ -36,12 +36,12 @@ const AppLayout = () => {
 
     setUser(userData);
     Cookies.set("user", JSON.stringify(userData), { expires: 7 }); // there is some link with user and token here ..
-    window.location.href = "/dashboard";
+    window.location.href = window.location.origin + "/dashboard";
   };
   const logout = () => {
     setUser(null);
     Cookies.remove("user");
-    window.location.href = "/login"; // .. if you want to redirect to login page everytime user logged out, do this
+    window.location.href = window.location.origin + "/login"; // .. if you want to redirect to login page everytime user logged out, do this
   };
   return (
     <StrictMode>
@@ -74,7 +74,7 @@ const AppRoutes = createBrowserRouter([
         element: <DashBoard />,
       },
       {
-        path: "friends/:id",
+        path: "/friends/:id",
         element: <UserFriend />,
       },
       {

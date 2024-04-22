@@ -2,7 +2,7 @@ import Login from "../components/Login";
 const GoToLogin = () => {
   return (
     <div>
-      {(window.location.href = "/login")}
+      {(window.location.href = window.location.origin + "/login")}
       <Login />
     </div>
   );

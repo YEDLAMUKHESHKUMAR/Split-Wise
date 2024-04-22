@@ -12,10 +12,9 @@ const Register = () => {
   const searchParams = new URLSearchParams(location.search);
   const invitationToken = searchParams.get("invitation");
   console.log("invitationToken there ? ", invitationToken);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [invitedBy,setInvitedBy] = useState("");
+  const [invitedBy, setInvitedBy] = useState("");
   const { login, user } = useContext(UserContext);
   // const [email, setEmail] = useState("");
   console.log("frnd email : ", email);
@@ -33,9 +32,9 @@ const Register = () => {
     console.log(jsonData);
     if (jsonData.msg) {
       alert(jsonData.msg);
-      window.location.href = "/register";
+      window.location.href = window.location.origin + "/register";
     } else {
-      setInvitedBy(jsonData.sender)
+      setInvitedBy(jsonData.sender);
       setEmail(jsonData.recipientEmail);
     }
   };
@@ -57,13 +56,13 @@ const Register = () => {
   const handleRegister = async () => {
     if (Cookies.get("user") !== undefined) {
       alert("You are already logged in.");
-      window.location.href = "/dashboard";
+      window.location.href = window.location.origin + "/dashboard";
     }
     console.log("handle register");
     const jsonData = await fetch(URL + "/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, email, password,invitedBy }),
+      body: JSON.stringify({ username, email, password, invitedBy }),
     }).then((res) => res.json());
     if (jsonData.msg) {
       alert(jsonData.msg);
@@ -78,7 +77,7 @@ const Register = () => {
   return (
     <div className="h-screen">
       {Cookies.get("user") !== undefined ? (
-        (window.location.href = "/dashboard")
+        (window.location.href = window.location.origin + "/dashboard")
       ) : (
         <div className="flex justify-center items-center h-full ">
           <div className="  flex flex-col bg-slate-100  w-10/12  p-12 shadow-lg">

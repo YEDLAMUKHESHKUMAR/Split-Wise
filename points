@@ -1,0 +1,4 @@
+1 ----> if you clicked on the same trans , it should be closed right ? that's why i put it null
+2 ---->because , if we open the trans and then delete it, it won't update the ShowIndex at particular index , (so next time we add trans and reach to that index,it is automatically showing the trans)so if we do this after deleting , it will set to false
+3 ----> whenever we delete , we re-render the page so that it shows updated data
+// const jsonData = await fetch(URL+ "/deleteTransaction/");

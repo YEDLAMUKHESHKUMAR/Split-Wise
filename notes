@@ -1,0 +1,41 @@
+------------> Started on 17-03-2024 <------------------
+-------------------------> if user changes , redirect him to login page , this component is fixed for every route or component <--------------------
+// points to be noted : 
+// add expenses : maximum amount should be fixed , otherwise user may enter 100000000000000000000000000000000000000000000 and also while entering amount if he enters 0.01 , after splitting it into half , it is like 0.000300000000000005 
+//                Can be able to add expenses from home by selecting friends , or  adding expenses for multiple friends at a time . ---> lentedTo becomes array 
+
+
+// edit : two transactions are settled , user changed one transaction to make them imbalance , and we know it comes back to expenses , what if he again balances those two transactions by just updating them as it was before , --> then they should go to their places right ? 
+// -----------------error handling ---------------->
+// what if user delete entire transaction : all comments should also be deleted
+
+owner pays amount , and he wants to delete it , then owe - lented
+friend paid amount he wants to delete it,then lented + paid
+
+
+
+// after clicking on the save button while adding trans ... it's better to close the popUp immediately , otherwise user might tap on save multiple times while the previous one is under process
+
+
+// work on diff shimmers , errors
+
+
+Packages added : 
+create-react-app 
+mongoose
+express
+cors
+nodemon
+bcryptjs
+jsonwebtoken
+body-parser
+dotenv
+
+--------------------------------------------------> Bugs <----------------------------------------
+if user delete trans from all expenses , everthing messes up , 
+what if he is trying to delete allready settled trans , (but we will get clicked as all instead of settle)
+shit bro : 
+let's say you both settled , 
+and user deleted a trans from allexpenses (but our transactions are settled : which means we don't have anything in expenses : and that to we are sending clicked as "all" , so it won't push unbalanced transactions to expenses again , but owe will be changed ) 
+NOW : we have nothing in expenses (which we should have basically (because we are not settled)),
+Now : if user tried to delete from all expenses to make it settle : (since we are settled : we are pushing all our expenses to settledTrans) : Lol we have nothing in expenses , as we didn't updated unbalanced trans back to expenses , and lol everthing transactions ,  gone 

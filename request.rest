@@ -1,0 +1,14 @@
+GET http://localhost:3001/users
+
+###
+POST http://localhost:3001/register
+
+
+Content-Type: application/json
+{
+   "username":"Mukhesh",
+   "email":"hiiiii@gmail.com",
+   "password":"Helo sldj"
+   
+}
+

@@ -1,3 +1,20 @@
+/*
+MVC : (Models,views,controllers) 
+In backend we use MVC for better functionality . 
+Models : To create models for Schemas .
+Views : To store the render view files ... 
+controllers : To make use of paths easier , we write all paths in it .  
+
+Unfortunately in this project I have not used MVC since it is somehow disturbing the flow of the project. 
+But I have the power of managing code by dividing them into multiple files and use it efficiently. 
+
+
+Please check this project for MVC : https://github.com/YEDLAMUKHESHKUMAR/Accommodation-Booking-Platform
+
+*/
+
+
+
 if (process.env.NODE_ENV != "production") {
   require("dotenv").config();
 }
